@@ -1,0 +1,253 @@
+.header-top {
+    background-color: $accent-white;
+    height: 34px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0 5px;
+
+    @include mobile {
+        display: none;
+    }
+    &-social-icons {
+        .header-top-icon {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            color: $gray-80;
+
+            &:first-of-type {
+                margin-right: 9.4px;
+            }
+            transition: 0.3s;
+            &:hover {
+                color: $dark-text;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &-list {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        list-style-type: none;
+        align-items: center;
+        height: 100%;
+        @include mobile {
+            justify-content: center;
+        }
+        &-item {
+            display: flex;
+            align-items: center;
+            .list-icon {
+                color: $gray-80;
+                margin-right: 10px;
+                margin-left: 25px;
+                font-size: 12px;
+            }
+            &-text {
+                font-size: 10px;
+                font-weight: 400;
+                color: $gray-80;
+                @include mobile {
+                    font-size: 8px;
+                }
+                &:hover {
+                    color: $gray-80;
+                    text-decoration: underline;
+                }
+            }
+            &:first-child {
+                .icon-wrapper {
+                    @include mobile {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.header-main {
+    background-color: $gray-9b;
+    z-index: 1000;
+    position: relative;
+    padding: 20px 0;
+    padding-top: 10px;
+    transition: 0.3s;
+    @include mobile {
+        padding: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    &-social-icons {
+        .header-top-icon {
+            color: $accent-white;
+        }
+        display: none;
+        @include mobile {
+            display: inline-block;
+            color: $accent-white;
+            position: absolute;
+            left: 8%;
+            top: 16px;
+            z-index: 20;
+        }
+    }
+
+    .hamburger-menu {
+        display: none;
+        @include mobile {
+            display: inline-block;
+            color: $accent-white;
+            position: absolute;
+            right: 8%;
+            top: 16px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 20;
+        }
+    }
+
+    .logo-wrapper {
+        margin-bottom: 15px;
+        @include tablet {
+            margin: 0;
+        }
+        .logo {
+            font-family: "Ragista", sans-serif;
+            color: $accent-white;
+            font-size: 36px;
+            font-weight: 400;
+            transition: 0.3s;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .menu {
+        position: relative;
+
+        .main-menu-wrapper {
+            position: relative;
+            width: 100%;
+            z-index: 0;
+            @include mobile {
+                display: none;
+                height: 100%;
+            }
+            .main-menu {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                z-index: 10;
+
+                @include tablet {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                }
+                @include mobile {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    background-color: $accent-white;
+                    box-shadow: 0px 7px 20px rgba(129, 129, 129, 0.2);
+                }
+                &-item {
+                    display: inline-block;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 17px;
+                    color: $accent-white;
+                    margin-left: 44px;
+                    position: relative;
+                    transition: 0.3s;
+                    z-index: 10;
+
+                    @include tablet {
+                        margin-left: 0;
+                        padding: 10px 0;
+                    }
+                    @include mobile {
+                        text-align: center;
+                        color: $dark-text;
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    &:hover {
+                        color: $accent-white;
+                        text-decoration: none;
+                        @include mobile {
+                            color: $dark-text;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: -6px;
+                            left: 0;
+                            width: 100%;
+                            height: 3px;
+                            background-color: $accent-white;
+                            @include tablet {
+                                bottom: 0;
+                            }
+                            @include mobile {
+                                background-color: $dark-text;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 13px;
+    @include mobile {
+        padding: 0;
+    }
+    .logo-wrapper {
+        margin-bottom: 5px;
+
+        @include mobile {
+            margin-bottom: 0;
+        }
+        .logo {
+            font-size: 27px;
+            @include mobile {
+                font-size: 36px;
+            }
+        }
+    }
+}
+.active {
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $accent-white;
+        @include tablet {
+            bottom: 0;
+        }
+        @include mobile {
+            background-color: $dark-text;
+        }
+    }
+}

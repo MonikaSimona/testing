@@ -1,0 +1,203 @@
+//SINGLE BLOG PAGE
+
+.single-blog-wrapper {
+    margin: 70px auto;
+    .single-blog-text-content {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        color: $dark-text;
+        font-size: 14px;
+        padding-top: 30px;
+    }
+    .single-blog-image-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 45px;
+
+        div {
+            width: 55%;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .single-blog-social-media-icons {
+        display: flex;
+        justify-content: flex-end;
+
+        .blog-link {
+            text-decoration: none;
+            margin-left: 10px;
+            color: $gray-80;
+        }
+    }
+    .single-blog-comments {
+        margin-top: 65px;
+
+        .comment-item {
+            display: flex;
+            margin-bottom: 10px;
+            .comment-item-left-section {
+                display: flex;
+                flex-direction: column;
+                padding-top: 10px;
+                .comment-name {
+                    align-self: center;
+                    color: $gray-80;
+                    font-size: 12px;
+                    font-family: "Montserrat";
+                }
+            }
+            .comment-item-right-section {
+                border-radius: 10px;
+                background: #fffbfb;
+                p {
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 10px;
+                    font-weight: 500;
+                    line-height: 15px;
+                    padding: 10px;
+                    font-style: italic;
+                    color: $dark-text;
+                }
+            }
+        }
+    }
+    .single-blog-comment-insert {
+        .form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &-input-wrapper {
+                margin: 21px 0;
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                @include desktop {
+                    flex-direction: column;
+                }
+                .form-input {
+                    width: 282px;
+                    height: 37px;
+                    border: none;
+                    background: #ffffff;
+                    box-shadow: 0px 8px 20px rgba(181, 181, 181, 0.2);
+                    padding-left: 19px;
+                    transition: 0.3s;
+                    @include desktop {
+                        margin-bottom: 20px;
+                        width: 100%;
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                    @include desktop-large-and-up {
+                        width: 330px;
+                    }
+                    &::placeholder {
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: 12px;
+                        color: $accent-white;
+                    }
+                }
+            }
+            .form-text-area {
+                width: 100%;
+                border: none;
+                background: #ffffff;
+                box-shadow: 0px 8px 20px rgba(181, 181, 181, 0.2);
+                height: 146px;
+                resize: none;
+                font-family: "Montserrat", sans-serif;
+                &::placeholder {
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 12px;
+                    color: $gray-c4;
+                }
+            }
+            .form-checkbox-wrapper {
+                display: flex;
+                width: 100%;
+                align-items: center;
+
+                flex-wrap: wrap;
+
+                .form-checkbox {
+                    width: 8px;
+                    height: 8px;
+                    margin-right: 7px;
+                    @include tablet {
+                        width: 13px;
+                        height: 13px;
+                        margin-right: 0;
+                        margin-bottom: 7px;
+                    }
+                    @include desktop-large-and-up {
+                        width: 13px;
+                        height: 13px;
+                    }
+                    background-color: transparent;
+                    &:focus-visible,
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                label {
+                    font-size: 10px;
+                    font-weight: 400;
+                    line-height: 15px;
+                    font-family: "Montserrat";
+                    color: $gray-80;
+                    margin: 0;
+                    word-break: break-all;
+                    text-align: center;
+                    @include desktop-large-and-up {
+                        font-size: 15px;
+                    }
+                }
+            }
+            input {
+                background: $gray-c4 !important;
+            }
+            input,
+            textarea {
+                &:focus,
+                &:focus-visible {
+                    outline: 1px solid $gray-c4;
+                }
+            }
+            .send-button {
+                border: none;
+                background-color: $accent-black-1b;
+                color: $accent-white;
+                font-size: 18px;
+                min-height: 60px;
+                min-width: 300px;
+                text-align: center;
+                margin-top: 25px;
+                align-self: flex-start;
+                font-family: "Yu Gothic Bold";
+            }
+        }
+        .heading-form {
+            font-size: 20px;
+            color: $accent-gold;
+        }
+        .text-form {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: "Montserrat";
+            color: $dark-text;
+        }
+        .form-text-area {
+            padding: 20px;
+        }
+    }
+}
